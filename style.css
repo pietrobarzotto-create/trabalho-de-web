@@ -1,0 +1,254 @@
+/* Cores do site */
+:root {
+  --fundo: #0d0b1a;
+  --cartao: #17142b;
+  --texto: #e6e4f0;
+  --texto-suave: #a9a5c4;
+  --destaque: #ff9f43;
+  --borda: #2e2a4d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+/* Topo */
+.topo {
+  text-align: center;
+  padding: 60px 20px 30px;
+  background: radial-gradient(circle at 50% 0%, #3a2a6b 0%, var(--fundo) 70%);
+}
+
+.topo h1 {
+  margin: 0;
+  font-size: 3rem;
+  letter-spacing: 1px;
+}
+
+.topo p {
+  color: var(--texto-suave);
+  margin: 10px 0 25px;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+nav a {
+  color: var(--texto);
+  text-decoration: none;
+  padding: 6px 14px;
+  border: 1px solid var(--borda);
+  border-radius: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.85rem;
+}
+
+nav a:hover,
+nav a:focus {
+  border-color: var(--destaque);
+  color: var(--destaque);
+}
+
+/* Conteúdo */
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+section {
+  margin: 50px 0;
+}
+
+h2 {
+  color: var(--destaque);
+  font-size: 1.7rem;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.1rem;
+  margin-top: 30px;
+}
+
+.intro p {
+  font-size: 1.25rem;
+  color: var(--texto-suave);
+  text-align: center;
+}
+
+.destaque {
+  background: var(--cartao);
+  border-left: 4px solid var(--destaque);
+  padding: 14px 18px;
+  border-radius: 6px;
+}
+
+/* Imagens */
+figure {
+  margin: 40px 0;
+}
+
+figure img {
+  width: 100%;
+  height: auto;
+  min-height: 220px;
+  display: block;
+  border-radius: 12px;
+  background: var(--cartao);
+  object-fit: cover;
+}
+
+figcaption {
+  text-align: center;
+  color: var(--texto-suave);
+  font-size: 0.85rem;
+  margin-top: 8px;
+}
+
+/* Tabelas */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--cartao);
+  border-radius: 10px;
+  overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.95rem;
+}
+
+th {
+  background: #2a2350;
+  color: var(--destaque);
+  text-align: left;
+}
+
+th,
+td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--borda);
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+/* Vídeo */
+.video-caixa {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* proporção 16:9 */
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+}
+
+.video-caixa iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.legenda {
+  text-align: center;
+  color: var(--texto-suave);
+  font-size: 0.85rem;
+}
+
+/* Conclusão */
+.conclusao {
+  text-align: center;
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  padding: 30px;
+  color: var(--texto-suave);
+  border-top: 1px solid var(--borda);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.85rem;
+}
+
+/* Celular */
+@media (max-width: 600px) {
+  body { font-size: 16px; }
+  .topo h1 { font-size: 2.2rem; }
+  th, td { padding: 8px; }
+}
+
+/* Página atual no menu */
+nav a.ativo {
+  background: var(--destaque);
+  border-color: var(--destaque);
+  color: #1a1208;
+  font-weight: bold;
+}
+
+/* Botões anterior / próxima */
+.paginacao {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 50px 0 20px;
+}
+
+.paginacao a {
+  color: var(--texto);
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 1px solid var(--destaque);
+  border-radius: 8px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.95rem;
+}
+
+.paginacao a:hover,
+.paginacao a:focus {
+  background: var(--destaque);
+  color: #1a1208;
+}
+
+.paginacao .proxima {
+  margin-left: auto;
+}
+
+/* Vídeo vertical (Shorts) */
+.video {
+  text-align: center;
+}
+
+.video-vertical {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  aspect-ratio: 9 / 16;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+}
+
+.video-vertical iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
